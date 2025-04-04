@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Page</title>
-    <link rel="stylesheet" href="css/index_style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Page</title>
+  <link rel="stylesheet" href="/css/jsMap_style.css" />
 </head>
 <body>
-    <p>JavaScript</p>
-    <div class="map_container">
-        <img src="/assets/images/javaScriptImage.jpg" usemap="#MAP">
-        <map name="MAP">
-            <area alt="Common info" title="Learn common info about js" href="/pages/jsMapCommon.html" coords="380,55,659,79" shape="rect">
-            <area alt="Objects" title="Learn about js objects" href="/pages/jsMapObjects.html" coords="381,80,661,104" shape="rect">
-            <area alt="Data types" title="Learn about js Data types" href="/pages/jsMapDataTypes.html" coords="380,104,660,129" shape="rect">
-            <area alt="Functions" title="Learn about js Functions" href="/pages/jsMapFunctions.html" coords="380,128,660,153" shape="rect">
-            <area alt="Prototypes" title="Learn about js Prototypes" href="/pages/jsMapPrototypes.html" coords="380,154,660,178" shape="rect">
-            <area alt="Asyncronous programming" title="Learn about js Asyncronous programming" href="/pages/jsMapAsyncProg.html" coords="380,177,661,202" shape="rect">
+  <h1 class="page-title">Карта изучения JavaScript</h1>
 
-            <area alt="Data types" title="Learn about js Data types" href="/pages/jsMapDataTypes.html" coords="380,104,660,129" shape="rect">
-            <area alt="Data types" title="Learn about js Data types" href="/pages/jsMapDataTypes.html" coords="380,104,660,129" shape="rect">
-            <area alt="Data types" title="Learn about js Data types" href="/pages/jsMapDataTypes.html" coords="380,104,660,129" shape="rect">
+  <div class="js-layout">
+    <div class="map-container">
+      <img src="/assets/images/javaScriptImage.jpg" usemap="#MAP" alt="JS roadmap"/>
+      <map name="MAP">
+        <area alt="Common info" title="Learn common info about js" href="/pages/jsMapCommon.html" coords="624,229,931,258" shape="rect" />
+        <area alt="Objects" title="Learn about js objects" href="/pages/jsMapObjects.html" coords="622,257,929,283" shape="rect" />
+        <area alt="Data types" title="Learn about js Data types" href="/pages/jsMapDataTypes.html" coords="619,283,931,310" shape="rect" />
+        <area alt="Functions" title="Learn about js Functions" href="/pages/jsMapFunctions.html" coords="622,311,931,339" shape="rect" />
+        <area alt="Prototypes" title="Learn about js Prototypes" href="/pages/jsMapPrototypes.html" coords="622,339,929,366" shape="rect" />
+        <area alt="Asynchronous programming" title="Learn about js Async" href="/pages/jsMapAsyncProg.html" coords="622,364,929,394" shape="rect" />
+        <area alt="Network" title="Learn about js network" href="/pages/jsMapNetwork.html" coords="622,391,929,418" shape="rect" />
+        <area alt="Regular expressions" title="Learn about js Regex" href="/pages/jsMapExpressions.html" coords="622,418,931,448" shape="rect" />
+        <area alt="Classes" title="Learn about js Classes" href="/pages/jsMapClasses.html" coords="619,448,929,475" shape="rect" />
+
+        
+      </map>
     </div>
-    <script type="module" src="js/main.js"></script>
+
+    <div class="text-container">
+      <h2>Что это за карта?</h2>
+      <p>
+        Это интерактивная карта изучения JavaScript — одного из самых популярных языков программирования.
+        Вы можете нажать на любой раздел, чтобы начать изучение конкретной темы. 
+        Следуйте поэтапно — от основ к продвинутым концепциям, и шаг за шагом вы станете настоящим JavaScript-разработчиком.
+      </p>
+    </div>
+
+    <div class="home-screen-button">
+        <button class="home-button">Вернуться на главный экран</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>

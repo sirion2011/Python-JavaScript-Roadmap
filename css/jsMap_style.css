@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #ffffff, #eef4f8);
+    color: #2b2b2b;
+}
+
+.page-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #2b7bbb;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.js-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+  
+/*.map-container:hover {
+    transform: scale(1.01);
+}*/
+  
+.map-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+  
+.text-container {
+    flex: 1;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-left: 5px solid #f4c430;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+  
+.text-container:hover {
+    transform: translateY(-5px);
+}
+  
+.text-container h2 {
+    font-size: 28px;
+    color: #f4c430;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+  
+.text-container p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.home-screen-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+  
+.home-button {
+    padding: 15px 40px;
+    background-color: #2b7bbb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+  
+.home-button:hover {
+    background-color: #256b9b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+  
+@media (max-width: 768px) {
+    .js-layout {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .text-container {
+      margin-top: 20px;
+    }
+  
+    .page-title {
+      font-size: 32px;
+    }
+}
+  

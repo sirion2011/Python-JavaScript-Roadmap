@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Page</title>
-    <link rel="stylesheet" href="css/index_style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Page</title>
+  <link rel="stylesheet" href="/css/jsMap_style.css" />
 </head>
 <body>
-    <p>Python</p>
-    <script type="module" src="js/main.js"></script>
+  <h1 class="page-title">Карта изучения Python</h1>
+
+  <div class="python-layout">
+    <div class="map-container">
+      <img src="/assets/images/pythonImage.jpg" usemap="#MAP" alt="Python roadmap"/>
+      <map name="MAP">
+        <area alt="Common info" title="Learn common info about js" href="/pages/jsPages/jsMapJsCommon.html" coords="220,3,500,29" shape="rect" />
+      </map>    
+    </div>
+
+    <div class="text-container">
+      <h2>Что это за карта?</h2>
+      <p>
+        Это интерактивная карта изучения Python — одного из самых популярных языков программирования.
+        Вы можете нажать на любой раздел, чтобы начать изучение конкретной темы. 
+        Следуйте поэтапно — от основ к продвинутым концепциям, и шаг за шагом вы станете настоящим Python-разработчиком.
+      </p>
+    </div>
+
+    <div class="home-screen-button">
+        <button class="home-button">Вернуться на главный экран</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>

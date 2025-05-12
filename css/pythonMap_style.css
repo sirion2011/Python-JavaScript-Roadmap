@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #ffffff, #eef4f8);
+    color: #2b2b2b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.page-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #2b7bbb;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.python-common-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex: 1;
+    padding-bottom: 100px;
+}
+
+.text-container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-left: 5px solid #f4c430;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.text-container:hover {
+    transform: translateY(-5px);
+}
+
+.text-container h2 {
+    font-size: 28px;
+    color: #f4c430;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.text-container p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+}
+
+.python-map-container {
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin: auto 0;
+}
+
+.python-map-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.python-map-container:hover {
+    transform: scale(1.01);
+}
+
+.home-screen-button {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+    background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+    padding: 15px 0;
+}
+
+.home-button {
+    padding: 15px 40px;
+    background-color: #2b7bbb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.home-button:hover {
+    background-color: #256b9b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 32px;
+        margin: 30px 0 15px;
+    }
+    
+    .python-common-info {
+        padding: 15px;
+        gap: 20px;
+        padding-bottom: 80px;
+    }
+    
+    .text-container {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .text-container h2 {
+        font-size: 24px;
+    }
+    
+    .text-container p {
+        font-size: 16px;
+    }
+    
+    .home-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    .home-screen-button {
+        bottom: 10px;
+    }
+}

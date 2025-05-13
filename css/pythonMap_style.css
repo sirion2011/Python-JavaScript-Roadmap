@@ -35,6 +35,20 @@ body {
     padding-bottom: 100px;
 }
 
+.python-python-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex: 1;
+    padding-bottom: 150px;
+}
+
 .text-container {
     width: 90%;
     max-width: 1000px;
@@ -86,7 +100,7 @@ body {
     transform: scale(1.01);
 }
 
-.home-screen-button {
+.home-screen-button, .back-screen-button {
     position: fixed;
     bottom: 40px;
     left: 0;
@@ -97,7 +111,7 @@ body {
     padding: 15px 0;
 }
 
-.home-button {
+.home-button, .back-button {
     padding: 15px 40px;
     background-color: #2b7bbb;
     color: white;
@@ -110,7 +124,7 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.home-button:hover {
+.home-button:hover, .back-button:hover {
     background-color: #256b9b;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -142,12 +156,15 @@ body {
         font-size: 16px;
     }
     
-    .home-button {
+    .home-button, .back-button {
         padding: 12px 30px;
         font-size: 16px;
     }
     
-    .home-screen-button {
+    .home-screen-button, .back-screen-button {
         bottom: 10px;
     }
 }
+
+
+

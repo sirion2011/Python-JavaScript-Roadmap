@@ -3,6 +3,7 @@ const javaScriptButton = document.querySelector(".javascript-button")
 const homePageButton = document.querySelector(".home-button")
 const backScreenButton = document.querySelector(".back-button")
 const homeScreenText = document.querySelector(".page-title")
+const jsBackButton = document.querySelector(".js-back-button")
 
 if (pythonButton) {
     pythonButton.addEventListener("click", () => {
@@ -33,5 +34,11 @@ if (homeScreenText){
     homeScreenText.style.cursor = "pointer"
     homeScreenText.addEventListener("click", () => {
         window.location.href = "/index.html"
+    })
+}
+
+if (jsBackButton){
+    jsBackButton.addEventListener("click", () => {
+        window.location.href = "/pages/javaScriptPage.html"
     })
 }

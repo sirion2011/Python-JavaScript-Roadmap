@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+    <link rel="stylesheet" href="/css/js_pages.css">
+</head>
+<body>
+    <div class="header">
+        <h1>JavaScript Objects</h1>
+    </div>
+
+    <div class="select-language">
+        <div class="select-text">
+            <p>Основные понятия JavaScript для начинающих</p>
+        </div>
+
+        <div class="common-info">
+            <h2>Что такое объект в JavaScript?</h2>
+            <p>Объекты — это фундаментальные структуры в JavaScript, используемые для хранения коллекций значений и более сложных сущностей. Они состоят из пар "ключ: значение".</p>
+        
+            <h2>Создание объектов</h2>
+            <ul>
+                <li><strong>Через литерал:</strong></li>
+                <pre><code>const person = {
+            name: "Alice",
+            age: 25,
+            isStudent: false
+        };</code></pre>
+        
+                <li><strong>Через конструктор:</strong></li>
+                <pre><code>const person = new Object();
+        person.name = "Bob";
+        person.age = 30;</code></pre>
+            </ul>
+        
+            <h2>Доступ к значениям</h2>
+            <p>Можно обращаться к свойствам через точку или скобки:</p>
+            <pre><code>console.log(person.name);     // Alice
+        console.log(person["age"]);   // 25</code></pre>
+        
+            <h2>Изменение и добавление свойств</h2>
+            <pre><code>person.age = 26;
+        person.city = "Minsk";</code></pre>
+        
+            <h2>Удаление свойства</h2>
+            <pre><code>delete person.isStudent;</code></pre>
+        
+            <h2>Вложенные объекты</h2>
+            <p>Объекты могут содержать другие объекты:</p>
+            <pre><code>const user = {
+            name: "John",
+            address: {
+                city: "London",
+                zip: "EC1A"
+            }
+        };
+        
+        console.log(user.address.city);</code></pre>
+        
+            <h2>Методы объектов</h2>
+            <p>Методы — это функции, находящиеся внутри объекта:</p>
+            <pre><code>const user = {
+            name: "Anna",
+            greet() {
+                console.log("Hello, " + this.name);
+            }
+        };
+        
+        user.greet();</code></pre>
+        
+            <h2>this в объектах</h2>
+            <p>Ключевое слово <code>this</code> ссылается на текущий объект:</p>
+            <pre><code>const car = {
+            brand: "Toyota",
+            showBrand() {
+                console.log(this.brand);
+            }
+        };</code></pre>
+        
+            <h2>Object.keys, Object.values, Object.entries</h2>
+            <p>Эти методы позволяют работать со свойствами объекта:</p>
+            <pre><code>const obj = { a: 1, b: 2 };
+        
+        console.log(Object.keys(obj));   // ["a", "b"]
+        console.log(Object.values(obj)); // [1, 2]
+        console.log(Object.entries(obj)); // [["a", 1], ["b", 2]]</code></pre>
+        
+            <h2>Копирование объектов</h2>
+            <ul>
+                <li><strong>Поверхностное копирование:</strong> <code>Object.assign()</code>, spread оператор</li>
+                <pre><code>const copy = { ...person };</code></pre>
+                <li><strong>Глубокое копирование:</strong> JSON-методы (подходит не всегда):</li>
+                <pre><code>const deepCopy = JSON.parse(JSON.stringify(person));</code></pre>
+            </ul>
+        
+            <h2>Проверка свойств</h2>
+            <pre><code>"name" in person;          // true
+        person.hasOwnProperty("age");  // true</code></pre>
+        
+            <h2>Цикл for...in</h2>
+            <p>Используется для перебора всех перечисляемых свойств объекта:</p>
+            <pre><code>for (let key in person) {
+            console.log(key + ": " + person[key]);
+        }</code></pre>
+        </div>
+        
+    </div>
+
+    <div class="js-back-button">
+        <button class="js-back-button" id="jsBackButton">Вернуться назад</button>
+    </div>
+
+    <div class="footer">
+        <div class="footer-roadmap">
+            <h1>Roadmap</h1>
+            <p>Frontend | Backend | Full-Stack</p>
+        </div>
+        <div class="footer-links">
+            <h1>Resources</h1>
+            <p><a href="#">MDN Docs</a></p>
+            <p><a href="#">JavaScript.info</a></p>
+            <p><a href="#">Learn JS</a></p>
+        </div>
+        <img class="footerImg" src="/assets/icons/js-logo.png" alt="JS logo" height="80px">
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

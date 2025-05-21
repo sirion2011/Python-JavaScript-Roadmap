@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Common</title>
+    <link rel="stylesheet" href="/css/js_pages.css">
+</head>
+<body>
+    <div class="header">
+        <h1>JavaScript Data Types</h1>
+    </div>
+
+    <div class="select-language">
+        <div class="select-text">
+            <p>Основные понятия JavaScript для начинающих</p>
+        </div>
+    
+        <div class="common-info">
+            <h2>Типы данных в JavaScript</h2>
+            <p>В JavaScript существует два основных типа данных: примитивные и ссылочные.</p>
+    
+            <h3>Примитивные типы:</h3>
+            <ul>
+                <li><code>string</code> — строка</li>
+                <li><code>number</code> — число</li>
+                <li><code>boolean</code> — логическое значение</li>
+                <li><code>null</code> — пустое значение</li>
+                <li><code>undefined</code> — значение не задано</li>
+                <li><code>symbol</code> — уникальный идентификатор</li>
+                <li><code>bigint</code> — большие целые числа</li>
+            </ul>
+    
+            <h3>Ссылочные типы:</h3>
+            <ul>
+                <li><code>object</code> — объект</li>
+                <li><code>array</code> — массив (частный случай объекта)</li>
+                <li><code>function</code> — функция (также объект)</li>
+            </ul>
+    
+            <h2>Проверка типа: оператор typeof</h2>
+            <pre><code>typeof "hello";           // "string"
+    typeof 42;                // "number"
+    typeof true;              // "boolean"
+    typeof undefined;         // "undefined"
+    typeof null;              // "object" (!) баг языка
+    typeof Symbol("id");     // "symbol"
+    typeof 10n;               // "bigint"
+    typeof {a:1};             // "object"
+    typeof [1, 2];            // "object"
+    typeof function(){};      // "function"</code></pre>
+    
+            <h2>NaN (Not a Number)</h2>
+            <p><code>NaN</code> — это специальное значение типа <code>number</code>, которое означает "не число".</p>
+            <pre><code>typeof NaN;               // "number"
+    NaN === NaN;             // false
+    Number.isNaN(NaN);       // true</code></pre>
+    
+            <h2>Явное и неявное приведение типов</h2>
+            <p><strong>Неявное:</strong></p>
+            <pre><code>'5' + 1;          // "51"
+    '5' - 1;          // 4
+    true + 1;         // 2
+    null + 1;         // 1</code></pre>
+    
+            <p><strong>Явное:</strong></p>
+            <pre><code>Number("42");     // 42
+    String(100);      // "100"
+    Boolean(0);       // false</code></pre>
+    
+            <h2>null vs undefined</h2>
+            <p>Оба значения означают отсутствие данных, но по-разному:</p>
+            <ul>
+                <li><code>null</code> — намеренное отсутствие значения</li>
+                <li><code>undefined</code> — значение не установлено</li>
+            </ul>
+            <pre><code>let x;
+    console.log(x);          // undefined
+    
+    let y = null;
+    console.log(y);          // null</code></pre>
+    
+            <h2>Передача по значению и по ссылке</h2>
+            <p>Примитивы передаются по значению, объекты — по ссылке.</p>
+            <pre><code>
+    let a = 5;
+    let b = a;
+    b = 10;
+    console.log(a);          // 5
+    
+    let obj1 = { name: "Tom" };
+    let obj2 = obj1;
+    obj2.name = "Jerry";
+    console.log(obj1.name);  // "Jerry"</code></pre>
+    
+            <h2>Проверка массива и объекта</h2>
+            <pre><code>Array.isArray([1, 2, 3]);          // true
+    typeof [1, 2, 3];                  // "object"
+    typeof {a: 1};                     // "object"</code></pre>
+    
+            <h2>Объектные обертки (object wrappers)</h2>
+            <p>Когда вы вызываете методы у примитивов, JavaScript временно преобразует их в объект:</p>
+            <pre><code>"hello".toUpperCase();    // "HELLO"
+    // создается временный объект new String("hello")</code></pre>
+    
+            <h2>Типы данных в JSON</h2>
+            <p>JSON поддерживает только ограниченный набор типов:</p>
+            <ul>
+                <li><code>string</code></li>
+                <li><code>number</code></li>
+                <li><code>boolean</code></li>
+                <li><code>null</code></li>
+                <li><code>array</code></li>
+                <li><code>object</code></li>
+            </ul>
+            <p>JSON не поддерживает <code>undefined</code>, <code>function</code>, <code>symbol</code></p>
+    
+            <h2>Сводная таблица типов и typeof</h2>
+            <pre><code>Тип             | typeof результат | Примитив
+    ---------------|------------------|---------
+    string          | "string"         | Да
+    number          | "number"         | Да
+    boolean         | "boolean"        | Да
+    null            | "object" (баг)   | Да
+    undefined       | "undefined"      | Да
+    symbol          | "symbol"         | Да
+    bigint          | "bigint"         | Да
+    object          | "object"         | Нет
+    array           | "object"         | Нет
+    function        | "function"       | Нет</code></pre>
+        </div>
+    </div>
+    
+
+    <div class="js-back-button">
+        <button class="js-back-button" id="jsBackButton">Вернуться назад</button>
+    </div>
+
+    <div class="footer">
+        <div class="footer-roadmap">
+            <h1>Roadmap</h1>
+            <p>Frontend | Backend | Full-Stack</p>
+        </div>
+        <div class="footer-links">
+            <h1>Resources</h1>
+            <p><a href="#">MDN Docs</a></p>
+            <p><a href="#">JavaScript.info</a></p>
+            <p><a href="#">Learn JS</a></p>
+        </div>
+        <img class="footerImg" src="/assets/icons/js-logo.png" alt="JS logo" height="80px">
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

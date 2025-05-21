@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Common</title>
+    <link rel="stylesheet" href="/css/js_pages.css">
+</head>
+<body>
+    <div class="header">
+        <h1>JavaScript Functions</h1>
+    </div>
+
+    <div class="select-language">
+        <div class="select-text">
+          <p>Основные понятия JavaScript для начинающих</p>
+        </div>
+      
+        <div class="common-info">
+          <h2>Что такое функции в JavaScript?</h2>
+          <p>Функции — это блоки кода, предназначенные для многократного выполнения определённых задач. Они позволяют переиспользовать код, структурировать программы и создавать абстракции.</p>
+      
+          <h2>Объявление функции</h2>
+          <pre><code>function greet(name) {
+        console.log("Привет, " + name);
+      }
+      
+      greet("Анна"); // Привет, Анна</code></pre>
+      
+          <h2>Функциональные выражения</h2>
+          <p>Функцию можно присвоить переменной:</p>
+          <pre><code>const sum = function(a, b) {
+        return a + b;
+      };
+      
+      console.log(sum(2, 3)); // 5</code></pre>
+      
+          <h2>Стрелочные функции</h2>
+          <pre><code>const multiply = (a, b) => a * b;
+      console.log(multiply(2, 3)); // 6</code></pre>
+      
+          <h2>Параметры по умолчанию</h2>
+          <pre><code>function greet(name = "Гость") {
+        console.log("Привет, " + name);
+      }
+      
+      greet(); // Привет, Гость</code></pre>
+      
+          <h2>Возврат значения</h2>
+          <p>Оператор <code>return</code> завершает выполнение функции и возвращает значение:</p>
+          <pre><code>function square(x) {
+        return x * x;
+      }
+      
+      console.log(square(4)); // 16</code></pre>
+      
+          <h2>Функции обратного вызова (Callback)</h2>
+          <pre><code>function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+      }
+      
+      ask("Вы согласны?", 
+          () => alert("Вы согласились."),
+          () => alert("Вы отменили выполнение."));</code></pre>
+      
+          <h2>Замыкания</h2>
+          <p>Замыкание — это функция, которая запоминает свою внешнюю среду, даже после завершения внешней функции:</p>
+          <pre><code>function makeCounter() {
+        let count = 0;
+        return function() {
+          return ++count;
+        };
+      }
+      
+      const counter = makeCounter();
+      console.log(counter()); // 1
+      console.log(counter()); // 2</code></pre>
+      
+          <h2>IIFE (немедленно вызываемые функции)</h2>
+          <pre><code>(function() {
+        console.log("Я вызываюсь сразу!");
+      })();</code></pre>
+      
+          <h2>Hoisting (всплытие)</h2>
+          <p>Функции, объявленные через <code>function</code>, всплывают:</p>
+          <pre><code>sayHi();
+      
+      function sayHi() {
+        console.log("Привет");
+      }</code></pre>
+      
+          <h2>Rest-параметры</h2>
+          <p>Позволяют передавать неопределённое количество аргументов:</p>
+          <pre><code>function sumAll(...args) {
+        return args.reduce((sum, val) => sum + val);
+      }
+      
+      console.log(sumAll(1, 2, 3)); // 6</code></pre>
+      
+          <h2>Деструктуризация параметров</h2>
+          <pre><code>function showUser({ name, age }) {
+        console.log(`${name} (${age})`);
+      }
+      
+      showUser({ name: "Анна", age: 22 }); // Анна (22)</code></pre>
+      
+          <h2>Методы call, apply, bind</h2>
+          <pre><code>function sayHi() {
+        console.log("Привет, " + this.name);
+      }
+      
+      const user = { name: "Анна" };
+      
+      sayHi.call(user);  // Привет, Анна
+      sayHi.apply(user); // Привет, Анна
+      
+      const bound = sayHi.bind(user);
+      bound();           // Привет, Анна</code></pre>
+      
+          <h2>Генераторы функций</h2>
+          <pre><code>function* generateSequence() {
+        yield 1;
+        yield 2;
+        yield 3;
+      }
+      
+      const generator = generateSequence();
+      console.log(generator.next().value); // 1
+      console.log(generator.next().value); // 2</code></pre>
+      
+          <h2>Функции как замыкания для приватных переменных</h2>
+          <pre><code>function Counter() {
+        let count = 0;
+        return {
+          increment() {
+            count++;
+            return count;
+          },
+          get() {
+            return count;
+          }
+        };
+      }
+      
+      const counter = Counter();
+      console.log(counter.increment()); // 1
+      console.log(counter.get());       // 1</code></pre>
+        </div>
+      </div>
+    
+      <div class="js-back-button">
+        <button class="js-back-button" id="jsBackButton">Вернуться назад</button>
+    </div>  
+
+    <div class="footer">
+        <div class="footer-roadmap">
+            <h1>Roadmap</h1>
+            <p>Frontend | Backend | Full-Stack</p>
+        </div>
+        <div class="footer-links">
+            <h1>Resources</h1>
+            <p><a href="#">MDN Docs</a></p>
+            <p><a href="#">JavaScript.info</a></p>
+            <p><a href="#">Learn JS</a></p>
+        </div>
+        <img class="footerImg" src="/assets/icons/js-logo.png" alt="JS logo" height="80px">
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

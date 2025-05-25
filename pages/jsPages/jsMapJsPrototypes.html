@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Common</title>
+    <link rel="stylesheet" href="/css/js_pages.css">
+</head>
+<body>
+    <div class="header">
+        <h1>JavaScript Prototypes & 'this'</h1>
+    </div>
+
+    <div class="select-language">
+        <div class="select-text">
+          <p>JavaScript: Прототипы, Наследование и ключевое слово <code>this</code></p>
+        </div>
+      
+        <div class="common-info">
+          <h2>Что такое прототип?</h2>
+          <p>Прототип — это объект, на который ссылается внутреннее свойство <code>[[Prototype]]</code> другого объекта. Это основа прототипного наследования в JavaScript.</p>
+          <pre><code>const animal = { eats: true };
+      const dog = { barks: true };
+      dog.__proto__ = animal;
+      
+      console.log(dog.eats); // true</code></pre>
+      
+          <h2>Object.create()</h2>
+          <p>Современный способ установить прототип:</p>
+          <pre><code>const animal = { eats: true };
+      const cat = Object.create(animal);
+      cat.meows = true;
+      
+      console.log(cat.eats);  // true
+      console.log(cat.meows); // true</code></pre>
+      
+          <h2>Проверка и установка прототипа</h2>
+          <pre><code>Object.getPrototypeOf(obj);
+      Object.setPrototypeOf(obj, proto);</code></pre>
+          <pre><code>const proto = { greet: () => console.log("hi") };
+      const user = {};
+      Object.setPrototypeOf(user, proto);
+      user.greet(); // hi</code></pre>
+      
+          <h2>Свойство prototype у функций</h2>
+          <pre><code>function Person(name) {
+        this.name = name;
+      }
+      
+      Person.prototype.sayHi = function() {
+        console.log("Hi, I'm " + this.name);
+      };
+      
+      const alice = new Person("Alice");
+      alice.sayHi();</code></pre>
+      
+          <h2>Встроенные прототипы</h2>
+          <pre><code>const arr = [1, 2, 3];
+      console.log(arr.__proto__ === Array.prototype); // true
+      console.log(Array.prototype.__proto__ === Object.prototype); // true</code></pre>
+      
+          <h2>Наследование через функции-конструкторы</h2>
+          <pre><code>function Animal(name) {
+        this.name = name;
+      }
+      
+      Animal.prototype.sayName = function() {
+        console.log("My name is " + this.name);
+      };
+      
+      function Dog(name, breed) {
+        Animal.call(this, name);
+        this.breed = breed;
+      }
+      
+      Dog.prototype = Object.create(Animal.prototype);
+      Dog.prototype.constructor = Dog;
+      
+      Dog.prototype.bark = function() {
+        console.log("Woof!");
+      };
+      
+      const dog = new Dog("Rex", "Labrador");
+      dog.sayName();
+      dog.bark();</code></pre>
+      
+          <h2>Ключевое слово this</h2>
+          <p><code>this</code> указывает на объект, от имени которого вызвана функция.</p>
+          <table>
+            <thead>
+              <tr><th>Контекст</th><th>Значение this</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Метод объекта</td><td>Сам объект</td></tr>
+              <tr><td>Функция (нестрогий режим)</td><td>Глобальный объект</td></tr>
+              <tr><td>Функция (strict mode)</td><td>undefined</td></tr>
+              <tr><td>Стрелочная функция</td><td>Контекст внешней области</td></tr>
+              <tr><td>Конструктор</td><td>Новый объект</td></tr>
+            </tbody>
+          </table>
+      
+          <pre><code>const user = {
+        name: "John",
+        sayHi() {
+          console.log(this.name);
+        }
+      };
+      
+      user.sayHi(); // John
+      
+      const say = user.sayHi;
+      say(); // undefined (в строгом режиме)</code></pre>
+      
+          <h2>Стрелочные функции и this</h2>
+          <p>Стрелочные функции наследуют <code>this</code> от внешней области видимости.</p>
+          <pre><code>const person = {
+        name: "Mike",
+        greet: () => {
+          console.log(this.name);
+        }
+      };
+      
+      person.greet(); // undefined</code></pre>
+      
+          <h2>Пример наследования с классами</h2>
+          <pre><code>class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+        speak() {
+          console.log(`${this.name} makes a sound.`);
+        }
+      }
+      
+      class Dog extends Animal {
+        speak() {
+          console.log(`${this.name} barks.`);
+        }
+      }
+      
+      const dog = new Dog("Buddy");
+      dog.speak(); // Buddy barks.</code></pre>
+        </div>
+      </div>
+    
+      <div class="js-back-button">
+        <button class="js-back-button" id="jsBackButton">Вернуться назад</button>
+    </div>
+
+    <div class="footer">
+        <div class="footer-roadmap">
+            <h1>Roadmap</h1>
+            <p>Frontend | Backend | Full-Stack</p>
+        </div>
+        <div class="footer-links">
+            <h1>Resources</h1>
+            <p><a href="#">MDN Docs</a></p>
+            <p><a href="#">JavaScript.info</a></p>
+            <p><a href="#">Learn JS</a></p>
+        </div>
+        <img class="footerImg" src="/assets/icons/js-logo.png" alt="JS logo" height="80px">
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>
